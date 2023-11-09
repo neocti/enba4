@@ -5,10 +5,10 @@ void main() {
   return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.deepOrange,
         appBar: AppBar(
           title: const Text('Dicee'),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.deepOrange,
         ),
         body: DicePage(),
       ),
@@ -35,16 +35,16 @@ class _DicePageState extends State<DicePage> {
           Row(
             children: [
               Expanded(child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 15.5,
+                  padding: const EdgeInsets.symmetric(vertical: 10.0,
                       horizontal: 16.0),
-                  child: Text("Score: $leftScore", style: const TextStyle(
+                  child: Text("Points: $leftScore", style: const TextStyle(
                     fontSize: 25.0,
                   ),)
               )),
               Expanded(child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15.5,
+                padding: const EdgeInsets.symmetric(vertical: 10.0,
                     horizontal: 16.0),
-                child: Text("Score: $rightScore", style: const TextStyle(
+                child: Text("Points: $rightScore", style: const TextStyle(
                     fontSize: 25.0
                 )),
               ))
@@ -97,7 +97,7 @@ class _DicePageState extends State<DicePage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
               ), child: const Text(
-                  "Reset Button"
+                  "Reset"
               ),
             ),
           )
@@ -114,12 +114,12 @@ class _DicePageState extends State<DicePage> {
 
   String getWinner() {
       if (left > right) {
-       return "Left dice rolls higher";
+       return "The Left dice rolls higher";
         } else if (right > left) {
-        return "Right dice rolls higher";
+        return "The Right dice rolls higher";
       }
       else {
-       return "Dice rolls are equal";
+       return "The Dice rolls are equal";
        }
   }
       void score() {
