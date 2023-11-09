@@ -5,10 +5,10 @@ void main() {
   return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.red,
         appBar: AppBar(
           title: const Text('Dicee'),
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: Colors.red,
         ),
         body: DicePage(),
       ),
@@ -35,16 +35,16 @@ class _DicePageState extends State<DicePage> {
           Row(
             children: [
               Expanded(child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0,
+                  padding: const EdgeInsets.symmetric(vertical: 15.5,
                       horizontal: 16.0),
-                  child: Text("Points: $leftScore", style: const TextStyle(
+                  child: Text("Score: $leftScore", style: const TextStyle(
                     fontSize: 25.0,
                   ),)
               )),
               Expanded(child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5.0,
+                padding: const EdgeInsets.symmetric(vertical: 15.5,
                     horizontal: 16.0),
-                child: Text("Points: $rightScore", style: const TextStyle(
+                child: Text("Score: $rightScore", style: const TextStyle(
                     fontSize: 25.0
                 )),
               ))
@@ -97,7 +97,7 @@ class _DicePageState extends State<DicePage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
               ), child: const Text(
-                  "Reset"
+                  "Reset Button"
               ),
             ),
           )
@@ -109,22 +109,28 @@ class _DicePageState extends State<DicePage> {
     left = 1 + Random().nextInt(6);
     right = 1 + Random().nextInt(6);
   }
+
+
+
   String getWinner() {
-    if (left > right) {
-      return "The Left dice rolls higher";
-    } else if (right > left) {
-      return "The Right dice rolls higher";
-    } else {
-      return "The Dice rolls are equal";
-    }
+      if (left > right) {
+       return "Left dice rolls higher";
+        } else if (right > left) {
+        return "Right dice rolls higher";
+      }
+      else {
+       return "Dice rolls are equal";
+       }
   }
-  void score() {
-    if (left > right) {
-      leftScore++;
-    } else if (right > left) {
-      rightScore++;
+      void score() {
+        if (left > right) {
+       leftScore++;
+     }
+        else if (right > left) {
+        rightScore++;
+        }
+      }
     }
-  }
- }
+
 
 
