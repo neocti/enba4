@@ -35,18 +35,16 @@ class _DicePageState extends State<DicePage> {
           Row(
             children: [
               Expanded(child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 0.0,
+                  padding: const EdgeInsets.symmetric(vertical: 5.0,
                       horizontal: 16.0),
-                  child: Text("Score: $leftScore", style: const TextStyle(
-                    fontFamily: 'Poppins',
+                  child: Text("Points: $leftScore", style: const TextStyle(
                     fontSize: 25.0,
                   ),)
               )),
               Expanded(child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 0.0,
+                padding: const EdgeInsets.symmetric(vertical: 5.0,
                     horizontal: 16.0),
-                child: Text("Score: $rightScore", style: const TextStyle(
-                    fontFamily: 'Poppins',
+                child: Text("Points: $rightScore", style: const TextStyle(
                     fontSize: 25.0
                 )),
               ))
@@ -80,12 +78,10 @@ class _DicePageState extends State<DicePage> {
           Text("The total roll is $sum",
               style: const TextStyle(
                 fontSize: 25.0,
-                fontFamily: "Poppins",
               )),
           Text(getWinner(),
               style: const TextStyle(
                 fontSize: 25.0,
-                fontFamily: "Poppins",
               )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal:
@@ -99,9 +95,9 @@ class _DicePageState extends State<DicePage> {
               });
             },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.black,
               ), child: const Text(
-                  "Reset Score"
+                  "Reset"
               ),
             ),
           )
@@ -115,11 +111,11 @@ class _DicePageState extends State<DicePage> {
   }
   String getWinner() {
     if (left > right) {
-      return "Left dice rolls higher";
+      return "The Left dice rolls higher";
     } else if (right > left) {
-      return "Right dice rolls higher";
+      return "The Right dice rolls higher";
     } else {
-      return "Dice rolls are equal";
+      return "The Dice rolls are equal";
     }
   }
   void score() {
